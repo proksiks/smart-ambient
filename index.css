@@ -1,0 +1,140 @@
+:root {
+  --player-w: 80vw;
+  --player-h: 80vh;
+}
+html,
+body {
+  overflow: hidden;
+  margin: 0;
+  font-family: Inter, Roboto, sans-serif;
+  background: #0b0b0b;
+  color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+}
+.wrap {
+  position: relative;
+  width: var(--player-w);
+  height: var(--player-h);
+  max-width: 100%;
+  max-height: 100%;
+}
+video#player {
+  position: relative;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.glow {
+  position: absolute;
+  pointer-events: none;
+  z-index: 5;
+  mix-blend-mode: screen;
+  filter: blur(40px);
+  transition: opacity 0.25s linear;
+}
+.g-top {
+  left: 0;
+  right: 0;
+  top: -18%;
+  height: 24%;
+}
+.g-bottom {
+  left: 0;
+  right: 0;
+  bottom: -18%;
+  height: 24%;
+}
+.g-left {
+  top: 0;
+  bottom: 0;
+  left: -18%;
+  width: 24%;
+}
+.g-right {
+  top: 0;
+  bottom: 0;
+  right: -18%;
+  width: 24%;
+}
+.corner {
+  position: absolute;
+  pointer-events: none;
+  z-index: 6;
+  filter: blur(64px);
+  transition: background 0.25s linear;
+}
+.c-tl {
+  left: -24%;
+  top: -24%;
+  width: 48%;
+  height: 48%;
+  border-radius: 50%;
+}
+.c-tr {
+  right: -24%;
+  top: -24%;
+  width: 48%;
+  height: 48%;
+  border-radius: 50%;
+}
+.c-bl {
+  left: -24%;
+  bottom: -24%;
+  width: 48%;
+  height: 48%;
+  border-radius: 50%;
+}
+.c-br {
+  right: -24%;
+  bottom: -24%;
+  width: 48%;
+  height: 48%;
+  border-radius: 50%;
+}
+
+.controls {
+  position: fixed;
+  right: 18px;
+  top: 18px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 12px;
+  border-radius: 8px;
+  backdrop-filter: blur(6px);
+  z-index: 101;
+}
+.controls label {
+  display: block;
+  font-size: 13px;
+  margin-bottom: 6px;
+}
+.controls input[type="range"] {
+  width: 170px;
+}
+.row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.btn {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  color: #ddd;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+code {
+  background: #111;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
